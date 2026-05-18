@@ -1,5 +1,5 @@
-# ignore all dot-prefixed files
-.*
-
-# Do not ignore this file
+# Keep the actual .gitignore file
 !.gitignore
+
+# but hide all dot-prefixed files.
+.*
