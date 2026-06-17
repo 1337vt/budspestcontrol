@@ -35,49 +35,60 @@
     <meta name="geo.position" content="45.4317;-84.9924">
     <meta name="ICBM" content="45.4317, -84.9924">
     <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://budspestcontrol.com",
+    "name": "Bud's Pest Control",
+    "alternateName": "Buds Pest Control",
+    "url": "https://budspestcontrol.com",
+    "logo": "https://budspestcontrol.com/budheroimage_1200x630px.png",
+    "image": "https://budspestcontrol.com/budheroimage_1200x630px.png",
+    "description": "Professional pest control services in Northern Michigan serving Harbor Springs, Petoskey, Cross Village, Pellston, Alanson, Boyne City, and surrounding areas.",
+    "telephone": "+1-906-430-4959",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Harbor Springs",
+        "addressRegion": "MI",
+        "postalCode": "49740",
+        "addressCountry": "US"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.4317,
+        "longitude": -84.9924
+    },
+    "areaServed": [
+        {"@type": "Place", "name": "Harbor Springs"},
+        {"@type": "Place", "name": "Petoskey"},
+        {"@type": "Place", "name": "Cross Village"},
+        {"@type": "Place", "name": "Pellston"},
+        {"@type": "Place", "name": "Alanson"},
+        {"@type": "Place", "name": "Boyne City"},
+        {"@type": "AdministrativeArea", "name": "Emmet County"},
+        "Northern Michigan"
+    ],
+    "openingHoursSpecification": [
         {
-        "@context": "https://schema.org",
-        "@type": "PestControlService",
-        "name": "Bud's Pest Control",
-        "alternateName": "Buds Pest Control",
-        "url": "https://budspestcontrol.com",
-        "logo": "https://budspestcontrol.com/budheroimage_1200x630px.png",
-        "image": "https://budspestcontrol.com/budheroimage_1200x630px.png",
-        "description": "Professional pest control services in Northern Michigan serving Harbor Springs, Petoskey, Cross Village, Pellston, Alanson, Boyne City, and surrounding areas.",
-        "telephone": "+1-906-430-4959",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Harbor Springs",
-            "addressRegion": "MI",
-            "postalCode": "49740",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 45.4317,
-            "longitude": -84.9924
-        },
-        "areaServed": [
-            {"@type": "City", "name": "Harbor Springs"},
-            {"@type": "City", "name": "Petoskey"},
-            {"@type": "City", "name": "Cross Village"},
-            {"@type": "City", "name": "Pellston"},
-            {"@type": "City", "name": "Alanson"},
-            {"@type": "City", "name": "Boyne City"},
-            {"@type": "AdministrativeArea", "name": "Emmet County"},
-            {"@type": "AdministrativeArea", "name": "Northern Michigan"}
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "https://schema.org/Sunday",
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday",
+            "https://schema.org/Saturday"
         ],
-        "openingHoursSpecification": [
-            {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-            "opens": "08:00",
-            "closes": "17:00"
-            }
-        ],
-        "priceRange": "$$"
+        "opens": "08:00",
+        "closes": "17:00"
         }
+    ],
+    "priceRange": "$$"
+    }
     </script>
+
+    
     <style>
         :root {
             --primary: #7c102c;
