@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bud's Pest Control - Northern Michigan Pest Control Services</title>
-    <meta name="description" content="Professional pest control services in Northern Michigan. Trusted experts serving Harbor Springs, Petoskey, and surrounding areas. Call for a free quote!">
+    <link rel="canonical" href="https://budspestcontrol.com/">
+    <meta name="description" content="Professional pest control services in Northern Michigan. Trusted experts serving Harbor Springs, Petoskey, and surrounding areas. Call for a free estimate!">
     <meta property="og:title" content="Bud's Pest Control - Northern Michigan Pest Control Services">
     <meta property="og:description" content="Professional pest control services protecting your home and business from unwanted pests. Trusted by communities throughout Northern Michigan.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://1337vt.github.io/budspestcontrol/">
-    <meta property="og:image" content="https://1337vt.github.io/budspestcontrol/budheroimage_1200x630px.png">
+    <meta property="og:url" content="https://budspestcontrol.com/">
+    <meta property="og:image" content="https://budspestcontrol.com/budheroimage_1200x630px.png">
     <meta property="og:site_name" content="Bud's Pest Control">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bud's Pest Control - Northern Michigan Pest Control Services">
@@ -168,8 +170,12 @@
             box-shadow: 0 10px 30px rgba(212, 160, 23, 0.4);
         }
 
+        [data-display]::after {
+            content: attr(data-display);
+        }
+
         .services {
-            padding: 5rem 2rem;
+            padding: 3rem 2rem;
             background-color: var(--white);
         }
 
@@ -194,46 +200,27 @@
             font-size: 1.1rem;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        .services-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .service-card {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #d4c5c9;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .service-card h3 {
-            color: var(--primary);
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .service-card p {
+        .services-list li {
+            padding: 0.6rem 1rem 0.6rem 1.75rem;
+            position: relative;
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .services-list li::before {
+            content: '›';
+            position: absolute;
+            left: 0.25rem;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.25rem;
         }
 
         .areas {
@@ -433,7 +420,7 @@
     <header class="header">
         <div class="header-content">
             <div class="logo">Bud's <span>Pest Control</span></div>
-            <a href="tel:9064304959" class="header-phone">📞 Call Now</a>
+            <a href="#" class="header-phone" data-tel="9064304959" data-display=" 906-430-4959">📞 Call Now</a>
         </div>
     </header>
 
@@ -454,7 +441,7 @@
                 ✨ Serving <span>Harbor Springs, Good Hart, Cross Village, Petoskey, Walloon Lake, Burt Lake, Mullet Lake</span> & Surrounding Areas
             </div>
             <br>
-            <a href="tel:9064304959" class="cta-button">Call Now for Free Quote</a>
+            <a href="#" class="cta-button" data-tel="9064304959" data-display=" 906-430-4959">Call Now for Free Estimate</a>
         </div>
     </section>
 
@@ -464,38 +451,13 @@
                 <h2>Our Pest Control Services</h2>
                 <p>Comprehensive solutions for all your pest problems</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🐜</div>
-                    <h3>Ants & Insects</h3>
-                    <p>Effective treatment for ants, spiders, beetles, and other insects that invade your home.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🐀</div>
-                    <h3>Rodent Control</h3>
-                    <p>Humane and effective solutions for mice, rats, and other rodents.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🦂</div>
-                    <h3>Stinging Pests</h3>
-                    <p>Safe removal of bees, wasps, hornets, and other insects.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🐜</div>
-                    <h3>Termites</h3>
-                    <p>Comprehensive termite detection and treatment to protect your property.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🦟</div>
-                    <h3>Mosquitoes & Fleas</h3>
-                    <p>Outdoor pest control for mosquitoes, fleas, ticks, and other biting pests.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Preventive Treatments</h3>
-                    <p>Year-round protection plans to keep pests from ever entering your home.</p>
-                </div>
-            </div>
+            <ul class="services-list">
+                <li>Commercial and Residential Insect and Rodent Control</li>
+                <li>Tree spraying for insect, fungus, fertilizing, and root feeding</li>
+                <li>Summer Deer Pro for Hosta's and Hydrangeas</li>
+                <li>Winter Deer Pro for Cedar, Yew's and Hemlocks</li>
+                <li>Residential and Small Commercial Snow Blowing in Harbor Springs area</li>
+            </ul>
         </div>
     </section>
 
@@ -532,13 +494,13 @@
                     <div class="contact-icon">📞</div>
                     <h3>Phone</h3>
                     <p>Call us for immediate assistance</p>
-                    <a href="tel:9064304959" class="contact-link">Call Now</a>
+                    <a href="#" class="contact-link" data-tel="9064304959" data-display=" 906-430-4959">Call Now</a>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">✉️</div>
                     <h3>Email</h3>
                     <p>Send us a message</p>
-                    <a href="mailto:budspestcontrol1@gmail.com" class="contact-link">Email Us</a>
+                    <a href="#" class="contact-link" data-user="budspestcontrol1" data-domain="gmail.com">Email Us</a>
                 </div>
             </div>
         </div>
@@ -612,6 +574,20 @@
             }).bindPopup(area.name).addTo(map);
         });
 
+    </script>
+    <script>
+        document.querySelectorAll('[data-tel]').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                location.href = 'tel:' + el.dataset.tel;
+            });
+        });
+        document.querySelectorAll('[data-user]').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                location.href = 'mailto:' + el.dataset.user + '@' + el.dataset.domain;
+            });
+        });
     </script>
 </body>
 </html>

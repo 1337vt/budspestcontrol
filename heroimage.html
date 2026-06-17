@@ -92,6 +92,10 @@
             margin-top: 1.5rem;
             text-decoration: none;
         }
+
+        [data-display]::after {
+            content: attr(data-display);
+        }
     </style>
 </head>
 <body>
@@ -103,9 +107,61 @@
             ✨ Serving <span>Harbor Springs, Petoskey</span> & Surrounding Areas
         </div>
         <br>
-        <a href="tel:9064304959" class="phone">📞 906-430-4959</a>
+        <a href="#" class="phone" data-tel="9064304959" data-display=" 906-430-4959">📞 Bud's Pest Control</a>
         <br>
-        <a href="mailto:budspestcontrol1@gmail.com" class="phone" style="background-color: transparent; border: 2px solid #d4a017; color: #d4a017; margin-left: 1rem;">✉️ budspestcontrol1@gmail.com</a>
+        <a href="#" class="phone" data-user="budspestcontrol1" data-domain="gmail.com" style="background-color: transparent; border: 2px solid #d4a017; color: #d4a017; margin-left: 1rem;">✉️ budspestcontrol1@gmail.com</a>
     </div>
+    <script>
+        document.querySelectorAll('[data-tel]').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                location.href = 'tel:' + el.dataset.tel;
+            });
+        });
+        document.querySelectorAll('[data-user]').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                location.href = 'mailto:' + el.dataset.user + '@' + el.dataset.domain;
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <button id="exportBtn" style="position:fixed;top:20px;right:20px;z-index:9999;padding:10px 24px;background:#d4a017;color:#1a1a1a;border:none;border-radius:8px;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,0.3);">📷 Export PNG</button>
+    <script>
+        document.getElementById('exportBtn').addEventListener('click', function() {
+            const btn = this;
+            const body = document.body;
+            const orig = { width: body.style.width, minHeight: body.style.minHeight };
+
+            btn.style.display = 'none';
+            body.style.width = '1200px';
+            body.style.minHeight = '630px';
+
+            html2canvas(body, {
+                useCORS: true,
+                backgroundColor: null,
+                scale: 2,
+                logging: false,
+            }).then(canvas => {
+                btn.style.display = '';
+                body.style.width = orig.width;
+                body.style.minHeight = orig.minHeight;
+
+                const output = document.createElement('canvas');
+                output.width = 1200;
+                output.height = 630;
+                output.getContext('2d').drawImage(canvas, 0, 0, 1200, 630);
+
+                const link = document.createElement('a');
+                link.download = 'budheroimage_1200x630px.png';
+                link.href = output.toDataURL('image/png');
+                link.click();
+            }).catch(() => {
+                btn.style.display = '';
+                body.style.width = orig.width;
+                body.style.minHeight = orig.minHeight;
+            });
+        });
+    </script>
 </body>
 </html>
